@@ -2,7 +2,7 @@ import React from "react";
 import { ChromePicker } from "react-color";
 import { useGlobalContext } from "./Context";
 import { FaPlusCircle, FaMinusCircle, FaExchangeAlt } from "react-icons/fa";
-
+import { IoPerson } from "react-icons/io5";
 const Controller = () => {
   const {
     team1Name,
@@ -24,6 +24,8 @@ const Controller = () => {
     setTeam2Color,
   } = useGlobalContext();
 
+  const [show1, setShow1] = React.useState(false);
+  const [show2, setShow2] = React.useState(false);
   return (
     <>
       <button type="button" onClick={SwitchTeam} className="Switch-btn">
@@ -60,20 +62,38 @@ const Controller = () => {
               <FaPlusCircle />
             </button>
           </div>
-          <div>
-            <button type="button" className="btn" onClick={resetTeam1Score}>
+          <div className="reset-div">
+            <button
+              type="button"
+              className="btn"
+              style={{ backgroundColor: team1Color }}
+              onClick={resetTeam1Score}
+            >
               Reset Team 1 Score
             </button>
-            <button type="button" className="btn" onClick={resetTeam1}>
-              Reset Team 1 Players
+            <button
+              type="button"
+              className="btn"
+              style={{ backgroundColor: team1Color }}
+              onClick={resetTeam1}
+            >
+              Reset Team 1 Players <IoPerson />
             </button>
           </div>
           <div>
-            <ChromePicker
-              color={team1Color}
-              onChangeComplete={(color) => setTeam1Color(color.hex)}
-              disableAlpha={true}
-            />
+            <button
+              type="button"
+              className="color-btn"
+              onClick={() => setShow1(!show1)}
+            >
+              Pick Color
+            </button>
+            {show1 && (
+              <ChromePicker
+                color={team1Color}
+                onChangeComplete={(color) => setTeam1Color(color.hex)}
+              />
+            )}
           </div>
         </div>
         <div className="team2Controller">
@@ -105,20 +125,39 @@ const Controller = () => {
               <FaPlusCircle />
             </button>
           </div>
-          <div>
-            <button type="button" className="btn" onClick={resetTeam2Score}>
+          <div className="reset-div">
+            <button
+              type="button"
+              className="btn"
+              style={{ backgroundColor: team2Color }}
+              onClick={resetTeam2Score}
+            >
               Reset Team 2 Score
             </button>
 
-            <button type="button" className="btn" onClick={resetTeam2}>
-              Reset Team 2 Players
+            <button
+              type="button"
+              className="btn"
+              style={{ backgroundColor: team2Color }}
+              onClick={resetTeam2}
+            >
+              Reset Team 2 Players <IoPerson />
             </button>
           </div>
           <div>
-            <ChromePicker
-              color={team2Color}
-              onChangeComplete={(color) => setTeam2Color(color.hex)}
-            />
+            <button
+              type="button"
+              className="color-btn"
+              onClick={() => setShow2(!show2)}
+            >
+              Pick Color
+            </button>
+            {show2 && (
+              <ChromePicker
+                color={team2Color}
+                onChangeComplete={(color) => setTeam2Color(color.hex)}
+              />
+            )}
           </div>
         </div>
       </div>

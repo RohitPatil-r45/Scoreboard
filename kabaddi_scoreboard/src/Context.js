@@ -62,8 +62,24 @@ const AppProvider = ({ children }) => {
     setTeam2Score(team1Score);
     setTeam1Name(team2Name);
     setTeam2Name(team1Name);
-    setIsOutTeam1(isOutTeam2);
-    setIsOutTeam2(isOutTeam1);
+    setIsOutTeam1({
+      p1: isOutTeam2.p7,
+      p2: isOutTeam2.p6,
+      p3: isOutTeam2.p5,
+      p4: isOutTeam2.p4,
+      p5: isOutTeam2.p3,
+      p6: isOutTeam2.p2,
+      p7: isOutTeam2.p1,
+    });
+    setIsOutTeam2({
+      p1: isOutTeam1.p7,
+      p2: isOutTeam1.p6,
+      p3: isOutTeam1.p5,
+      p4: isOutTeam1.p4,
+      p5: isOutTeam1.p3,
+      p6: isOutTeam1.p2,
+      p7: isOutTeam1.p1,
+    });
     setTeam1Color(team2Color);
     setTeam2Color(team1Color);
   };
