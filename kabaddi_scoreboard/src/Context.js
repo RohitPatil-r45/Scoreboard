@@ -6,6 +6,8 @@ const AppProvider = ({ children }) => {
   const [team2Name, setTeam2Name] = useState("Roman");
   const [team1Score, setTeam1Score] = useState(0);
   const [team2Score, setTeam2Score] = useState(0);
+  const [team1Color, setTeam1Color] = useState("#ff0000");
+  const [team2Color, setTeam2Color] = useState("#0000ff");
   const [isOutTeam1, setIsOutTeam1] = useState({
     p1: true,
     p2: true,
@@ -54,6 +56,19 @@ const AppProvider = ({ children }) => {
   const resetTeam2Score = () => {
     setTeam2Score(0);
   };
+
+  const SwitchTeam = () => {
+    setTeam1Score(team2Score);
+    setTeam2Score(team1Score);
+    setTeam1Name(team2Name);
+    setTeam2Name(team1Name);
+    setIsOutTeam1(isOutTeam2);
+    setIsOutTeam2(isOutTeam1);
+    setTeam1Color(team2Color);
+    setTeam2Color(team1Color);
+    // console.log("SwitchTeam");
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -73,6 +88,11 @@ const AppProvider = ({ children }) => {
         resetTeam2,
         resetTeam1Score,
         resetTeam2Score,
+        SwitchTeam,
+        team1Color,
+        team2Color,
+        setTeam1Color,
+        setTeam2Color,
       }}
     >
       {children}
