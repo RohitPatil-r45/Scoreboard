@@ -66,7 +66,6 @@ const AppProvider = ({ children }) => {
     setIsOutTeam2(isOutTeam1);
     setTeam1Color(team2Color);
     setTeam2Color(team1Color);
-    // console.log("SwitchTeam");
   };
 
   return (

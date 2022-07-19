@@ -27,7 +27,8 @@ const Controller = () => {
   return (
     <>
       <button type="button" onClick={SwitchTeam} className="Switch-btn">
-        <FaExchangeAlt /> Switch Team <FaExchangeAlt />
+        <FaExchangeAlt onClick={SwitchTeam} /> Switch Team{" "}
+        <FaExchangeAlt onClick={SwitchTeam} />
       </button>
 
       <div className="controller">
