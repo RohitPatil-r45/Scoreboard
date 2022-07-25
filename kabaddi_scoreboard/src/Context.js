@@ -2,8 +2,8 @@ import React, { useState, useContext } from "react";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const [team1Name, setTeam1Name] = useState("Rohit");
-  const [team2Name, setTeam2Name] = useState("Roman");
+  const [team1Name, setTeam1Name] = useState("Team 1 Name");
+  const [team2Name, setTeam2Name] = useState("Team 2 Name");
   const [team1Score, setTeam1Score] = useState(0);
   const [team2Score, setTeam2Score] = useState(0);
   const [team1Color, setTeam1Color] = useState("#ff0000");

@@ -52,7 +52,7 @@ const Controller = () => {
               <FaMinusCircle />
             </button>
             <label>
-              {team1Name.substring(0, 10)} Score : {team1Score}
+              {team1Name.substring(0, 12)} Score : {team1Score}
             </label>
             <button
               type="button"
@@ -115,7 +115,7 @@ const Controller = () => {
               <FaMinusCircle />
             </button>
             <label>
-              {team2Name.substring(0, 10)} Score : {team2Score}
+              {team2Name.substring(0, 12)} Score : {team2Score}
             </label>
             <button
               type="button"

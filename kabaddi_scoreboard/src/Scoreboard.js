@@ -36,7 +36,6 @@ const Scoreboard = () => {
         </div>
       </div>
       <Players />
-
       <Controller />
     </div>
   );
