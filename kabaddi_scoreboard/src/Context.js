@@ -52,10 +52,14 @@ const AppProvider = ({ children }) => {
   };
 
   const resetTeam1Score = () => {
-    setTeam1Score(0);
+    if (window.confirm(`Reset ${team1Name} score to 0`)) {
+      setTeam1Score(0);
+    }
   };
   const resetTeam2Score = () => {
-    setTeam2Score(0);
+    if (window.confirm(`Reset ${team2Name} score to 0`)) {
+      setTeam2Score(0);
+    }
   };
 
   const SwitchTeam = () => {
