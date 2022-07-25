@@ -148,9 +148,10 @@ label {
 
 .btn-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   align-content: center;
+  width: 100%;
 }
 
 .btn-container label {

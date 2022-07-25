@@ -2,8 +2,14 @@ import React from "react";
 import { IoPersonOutline, IoPerson } from "react-icons/io5";
 import { useGlobalContext } from "./Context";
 const Players = () => {
-  const { isOutTeam1, setIsOutTeam1, isOutTeam2, setIsOutTeam2 } =
-    useGlobalContext();
+  const {
+    isOutTeam1,
+    setIsOutTeam1,
+    isOutTeam2,
+    setIsOutTeam2,
+    midText,
+    setMidText,
+  } = useGlobalContext();
   return (
     <div className="players">
       <div className="team1Players">
@@ -114,7 +120,9 @@ const Players = () => {
         </div>
       </div>
 
-      <div className="info">1st Half</div>
+      <div className="info" onClick={() => setMidText(!midText)}>
+        {midText ? "1st Half" : "2nd Half"}
+      </div>
 
       {/* -------------------------------------------TEAM 2-------------------------------------------------- */}
       <div className="team2Players">
